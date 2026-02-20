@@ -1,5 +1,5 @@
 const TWITCH_CHANNEL = "KiLLU_MiNAT"; // z.B. "KiLLU_MiNAT"
-const PARENT_DOMAINS = ["localhost", "127.0.0.1"]; // sp‰ter deine Domain(s)
+const PARENT_DOMAINS = ["killu-minat.github.io"]; // sp√§ter deine Domain(s)
 
 const player = document.getElementById("twitchPlayer");
 const chat = document.getElementById("twitchChat");
@@ -20,4 +20,5 @@ chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/ch
 
 // Buttons
 openTwitch.href = `https://www.twitch.tv/killu_minat{TWITCH_CHANNEL}`;
+
 openVods.href = `https://www.twitch.tv/killu_minat{TWITCH_CHANNEL}/videos`;d
