@@ -1,24 +1,30 @@
-const TWITCH_CHANNEL = "KiLLU_MiNAT"; // z.B. "KiLLU_MiNAT"
-const PARENT_DOMAINS = ["killu-minat.github.io"]; // später deine Domain(s)
+// Twitch Settings
+const TWITCH_CHANNEL = "killu_minat";
 
-const player = document.getElementById("twitchPlayer");
-const chat = document.getElementById("twitchChat");
-const openTwitch = document.getElementById("openTwitch");
-const openVods = document.getElementById("openVods");
+// GitHub Pages Domain (WICHTIG)
+const PARENT_DOMAINS = ["killu-minat.github.io"];
+
+// OPTIONAL: Wenn du auch lokal testen willst (Live Server):
+// const PARENT_DOMAINS = ["killu-minat.github.io", "localhost", "127.0.0.1"];
 
 function parentParams() {
-    return PARENT_DOMAINS.map(d => `parent=${encodeURIComponent(d)}`).join("&");
+  return PARENT_DOMAINS.map(d => `parent=${encodeURIComponent(d)}`).join("&");
 }
 
-const parent = parentParams();
+document.addEventListener("DOMContentLoaded", () => {
+  const player = document.getElementById("twitchPlayer");
+  const chat = document.getElementById("twitchChat");
 
-// Stream Player
-player.src = `https://www.twitch.tv/killu_minat{encodeURIComponent(TWITCH_CHANNEL)}&autoplay=true&muted=true&${parent}`;
+  const parent = parentParams();
 
-// Chat (Desktop)
-chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/chat?darkpopout&${parent}`;
+  // Twitch Player (iframe)
+  // muted=true, sonst blocken Browser autoplay oft
+  if (player) {
+    player.src = `https://player.twitch.tv/?channel=${encodeURIComponent(TWITCH_CHANNEL)}&autoplay=true&muted=true&${parent}`;
+  }
 
-// Buttons
-openTwitch.href = `https://www.twitch.tv/killu_minat{TWITCH_CHANNEL}`;
-
-openVods.href = `https://www.twitch.tv/killu_minat{TWITCH_CHANNEL}/videos`;d
+  // Twitch Chat (iframe)
+  if (chat) {
+    chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/chat?darkpopout&${parent}`;
+  }
+});
