@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matscho – Playlists</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+    <!-- TOPBAR (einheitlich) -->
+    <header class="pageTop">
+        <div class="topbar">
+            <div class="topbar__inner">
+                <nav class="nav">
+                    <a class="brand" href="index.html">
+                        <img src="assets/logo.png" alt="Matscho Logo" />
+                    </a>
+
+                    <!-- MOBILE BURGER -->
+                    <button class="burger" id="burgerBtn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div class="nav__links" id="navMenu">
+                        <a href="index.html" class="nav__link">START</a>
+                        <a href="livestream.html" class="nav__link">LIVESTREAM</a>
+                        <a href="musik.html" class="nav__link is-active">MUSIK</a>
+                        <a href="kontakt.html" class="nav__link">KONTAKT</a>
+                    </div>
+
+                    <div class="nav__icons" aria-label="Social Icons">
+                        <a href="#" class="iconbtn" aria-label="Spotify">
+                            <!-- Spotify Icon (simple) -->
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.56 14.42a.9.9 0 0 1-1.24.3c-2.9-1.78-6.55-2.18-10.86-1.2a.9.9 0 1 1-.4-1.76c4.78-1.09 8.89-.62 12.13 1.37.42.26.55.82.3 1.24Zm.9-2.62a1.1 1.1 0 0 1-1.51.37c-3.31-2.03-8.35-2.62-12.26-1.43a1.1 1.1 0 1 1-.64-2.1c4.49-1.36 10.07-.7 13.93 1.66.52.32.68 1 .37 1.5Zm.08-2.72c-3.97-2.36-10.5-2.57-14.29-1.42a1.3 1.3 0 0 1-.75-2.48c4.35-1.32 11.58-1.06 16.17 1.68a1.3 1.3 0 0 1-1.33 2.22Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="iconbtn" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <path fill="currentColor" d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.9 4.6 12 4.6 12 4.6s-5.9 0-7.5.5A3 3 0 0 0 2.4 7.2 31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.6.5 7.5.5 7.5.5s5.9 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10.3 15.2V8.8L16 12l-5.7 3.2Z" />
+                            </svg>
+                        </a>
+
+                        <a href="#" class="iconbtn" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2Zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2ZM18 6.3a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="pageHero">
+            <h1 class="pageTitle">PLAYLISTS</h1>
+            <p class="pageSub">Spotify & YouTube Music – direkt hier abspielen.</p>
+        </section>
+
+        <section class="mediaGrid">
+            <!-- Spotify Playlist -->
+            <div class="card">
+                <div class="card__head">
+                    <h2>Spotify Playlist</h2>
+                    <div class="pill"><span class="dot"></span> Play</div>
+                </div>
+
+                <div class="embedSpotify">
+                    <iframe id="spotifyPlaylistFrame"
+                            src=""
+                            width="100%"
+                            height="420"
+                            frameborder="0"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                            title="Spotify Playlist"></iframe>
+                </div>
+
+                <div class="card__foot">
+                    <a class="btn" id="openSpotifyPlaylist" href="#" target="_blank" rel="noopener">Auf Spotify öffnen</a>
+                    <a class="btn btn--ghost" id="spotifySaveHint" href="#" target="_blank" rel="noopener">In Spotify speichern</a>
+                </div>
+
+                <div class="hint">
+                    Tipp: „Speichern“/„Zur Playlist hinzufügen“ passiert in Spotify selbst (wegen Login).
+                </div>
+            </div>
+
+            <!-- YouTube Music Playlist -->
+            <div class="card">
+                <div class="card__head">
+                    <h2>YouTube Music Playlist</h2>
+                    <div class="pill pill--muted">Play</div>
+                </div>
+
+                <div class="embedYT">
+                    <iframe id="ytPlaylistFrame"
+                            src=""
+                            width="100%"
+                            height="420"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            loading="lazy"
+                            title="YouTube Music Playlist"></iframe>
+                </div>
+
+                <div class="card__foot">
+                    <a class="btn" id="openYTPlaylist" href="#" target="_blank" rel="noopener">Auf YouTube Music öffnen</a>
+                    <a class="btn btn--ghost" id="ytSaveHint" href="#" target="_blank" rel="noopener">Playlist speichern</a>
+                </div>
+
+                <div class="hint">
+                    Falls der Player nicht lädt: in manchen Browsern/Setups blocken Cookies/Tracker den Embed.
+                    Dann einfach über „Öffnen“ schauen.
+                </div>
+            </div>
+
+            <!-- Optional: Quick Links -->
+            <div class="card">
+                <div class="card__head"><h2>Quick Links</h2></div>
+                <div class="miniCards">
+                    <a class="mini" id="openSpotifyApp" href="#" target="_blank" rel="noopener">
+                        <span class="mini__title">Spotify App öffnen</span>
+                        <span class="mini__meta">schnell & direkt</span>
+                    </a>
+                    <a class="mini" id="openYTApp" href="#" target="_blank" rel="noopener">
+                        <span class="mini__title">YouTube Music App öffnen</span>
+                        <span class="mini__meta">mobile friendly</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__head"><h2>Info</h2></div>
+                <p class="card__text">
+                    Wenn du willst, bau ich dir später noch: „Latest Release“-Box, Cover Grid,
+                    oder einen Bereich mit deinen besten Tracks wie in einem Store-Layout.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="spotify.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
