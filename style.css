@@ -919,3 +919,11 @@ body.page {
     z-index: 10000; /* Dropdown über Video/Track */
   }
 }
+
+/* Falls ein Element im Hero/Track über dem Menü liegt */
+@media (max-width: 900px) {
+  .hero, .leftpanel, .track, .modal {
+    z-index: 1;
+    position: relative;
+  }
+}
