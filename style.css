@@ -40,7 +40,7 @@ body {
     transform: scale(1.02);
 }
 
-/* Layers container that matches the ìsame sizeî feel */
+/* Layers container that matches the ‚Äúsame size‚Äù feel */
 .hero__layers {
     position: absolute;
     inset: 0;
@@ -76,7 +76,7 @@ body {
     position: absolute;
     inset: 0;
     background: url("assets/header-person.png") center/cover no-repeat;
-    /* damit der Charakter ìrechtsî st‰rker wirkt wie im Screenshot */
+    /* damit der Charakter ‚Äúrechts‚Äù st√§rker wirkt wie im Screenshot */
     background-position: 70% 50%;
     filter: contrast(1.05) saturate(1.08);
 }
@@ -245,7 +245,7 @@ body {
     display: flex;
     align-items: center;
     gap: 26px;
-    margin-left: 12px; /* damit es ìnebenî dem Logo sitzt */
+    margin-left: 12px; /* damit es ‚Äúneben‚Äù dem Logo sitzt */
 }
 
 .nav__link {
@@ -489,9 +489,9 @@ body {
 
 /* Responsive tweaks */
 @media (max-width: 820px) {
-    .nav__links {
-        display: none;
-    }
+
+    /* display:none entfernen, damit Burger Men√º funktionieren kann */
+    /* .nav__links { display: none; } */
 
     .brand img {
         height: 40px;
@@ -880,6 +880,7 @@ body.page {
     }
 
     .nav__links {
+        display: flex;   /* <<< DIESE ZEILE HINZUF√úGEN */
         position: absolute;
         top: 70px;
         left: 0;
@@ -898,11 +899,11 @@ body.page {
         transition: .25s;
     }
 
-        .nav__links.open {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
+    .nav__links.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 
     .nav__icons {
         display: none;
