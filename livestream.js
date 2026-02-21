@@ -14,16 +14,21 @@ function parentParams() {
 document.addEventListener("DOMContentLoaded", () => {
   const player = document.getElementById("twitchPlayer");
   const chat = document.getElementById("twitchChat");
+  const openTwitchBtn = document.getElementById("openTwitch");
+  const openVodsBtn = document.getElementById("openVods");
+
+  // Buttons korrekt setzen
+  if (openTwitchBtn) openTwitchBtn.href = `https://www.twitch.tv/${TWITCH_CHANNEL}`;
+  if (openVodsBtn) openVodsBtn.href = `https://www.twitch.tv/${TWITCH_CHANNEL}/videos`;
 
   const parent = parentParams();
 
-  // Twitch Player (iframe)
-  // muted=true, sonst blocken Browser autoplay oft
+  // Twitch Player
   if (player) {
     player.src = `https://player.twitch.tv/?channel=${encodeURIComponent(TWITCH_CHANNEL)}&autoplay=true&muted=true&${parent}`;
   }
 
-  // Twitch Chat (iframe)
+  // Twitch Chat
   if (chat) {
     chat.src = `https://www.twitch.tv/embed/${encodeURIComponent(TWITCH_CHANNEL)}/chat?darkpopout&${parent}`;
   }
