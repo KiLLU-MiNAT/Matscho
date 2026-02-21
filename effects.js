@@ -5,21 +5,19 @@
 const isTouch = window.matchMedia("(hover: none)").matches;
 
 if (!isTouch) {
-    document.body.classList.add("custom-cursor");
+  const glow = document.createElement("div");
+  glow.className = "cursor-glow";
+  document.body.appendChild(glow);
 
-    const glow = document.createElement("div");
-    glow.className = "cursor-glow";
-    document.body.appendChild(glow);
+  window.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+    glow.style.opacity = 1;
+  });
 
-    window.addEventListener("mousemove", (e) => {
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
-        glow.style.opacity = 1;
-    });
-
-    window.addEventListener("mouseleave", () => {
-        glow.style.opacity = 0;
-    });
+  window.addEventListener("mouseleave", () => {
+    glow.style.opacity = 0;
+  });
 }
 
 /* ===============================
@@ -72,4 +70,5 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
+
 draw();
