@@ -1,0 +1,37 @@
+/* ===============================
+   CURSOR GLOW
+================================ */
+
+.cursor-glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(90,170,255,0.18), transparent 65%);
+    mix-blend-mode: screen;
+    transition: opacity .15s ease;
+}
+
+body.custom-cursor {
+    cursor: none;
+}
+
+    body.custom-cursor a,
+    body.custom-cursor button {
+        cursor: none;
+    }
+
+/* ===============================
+   PARTICLES BACKGROUND
+================================ */
+
+#particlesCanvas {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+}
