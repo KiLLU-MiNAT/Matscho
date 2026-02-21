@@ -34,41 +34,44 @@ let particles = [];
 let W, H;
 
 function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
 }
 resize();
 window.addEventListener("resize", resize);
 
-for (let i = 0; i < 70; i++) {
-    particles.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.6 + 0.3
-    });
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: (Math.random() - 0.5) * 0.3,
+    r: Math.random() * 1.6 + 0.3
+  });
 }
 
 function draw() {
-    ctx.clearRect(0, 0, W, H);
+  ctx.clearRect(0, 0, W, H);
 
-    ctx.fillStyle = "rgba(90,170,255,0.35)";
-    for (let p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
+  ctx.fillStyle = "rgba(90,170,255,0.85)";
+  ctx.shadowColor = "rgba(90,170,255,0.9)";
+  ctx.shadowBlur = 12;
 
-        if (p.x < 0) p.x = W;
-        if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H;
-        if (p.y > H) p.y = 0;
+  for (let p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-    }
+    if (p.x < 0) p.x = W;
+    if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H;
+    if (p.y > H) p.y = 0;
 
-    requestAnimationFrame(draw);
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
 }
 
 draw();
