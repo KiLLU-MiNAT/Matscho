@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matscho – Downloads</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+
+    <!-- Topbar -->
+    <header class="pageTop">
+        <div class="topbar">
+            <div class="topbar__inner">
+                <nav class="nav">
+                    <a class="brand" href="index.html">
+                        <img src="assets/logo.png" alt="Matscho Logo" />
+                    </a>
+
+                    <button class="burger" id="burgerBtn" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+
+                    <div class="nav__links" id="navMenu">
+                        <a href="index.html" class="nav__link">START</a>
+                        <a href="livestream.html" class="nav__link">LIVESTREAM</a>
+                        <a href="spotify.html" class="nav__link">MUSIK</a>
+                        <a href="downloads.html" class="nav__link is-active">DOWNLOADS</a>
+                        <a href="kontakt.html" class="nav__link">KONTAKT</a>
+                    </div>
+
+                    <div class="nav__icons">
+                        <a href="#" class="iconbtn" aria-label="Spotify">♪</a>
+                        <a href="#" class="iconbtn" aria-label="YouTube">▶</a>
+                        <a href="#" class="iconbtn" aria-label="Instagram">◎</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="pageHero">
+            <h1 class="pageTitle">DOWNLOADS</h1>
+            <p class="pageSub">PDFs, Präsentationen & Dateien — sauber organisiert.</p>
+        </section>
+
+        <!-- Controls -->
+        <section class="dlControls card">
+            <div class="dlControls__inner">
+                <div class="dlSearch">
+                    <label class="dlLabel" for="dlSearch">Suchen</label>
+                    <input id="dlSearch" class="dlInput" type="search" placeholder="z.B. Presskit, Präsentation, PDF …" />
+                </div>
+
+                <div class="dlFilters">
+                    <button class="chip is-active" data-filter="all">Alle</button>
+                    <button class="chip" data-filter="pdf">PDF</button>
+                    <button class="chip" data-filter="ppt">Präsentation</button>
+                    <button class="chip" data-filter="file">Datei</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads grid -->
+        <section class="dlGrid" id="dlGrid">
+
+            <!-- Epstein Presentation 1 -->
+            <article class="dlCard" data-type="pdf" data-title="Epstein Files Presentation 1">
+                <div class="dlCard__top">
+                    <div class="dlType">PDF</div>
+                    <h3 class="dlTitle">Epstein Files – Presentation 1</h3>
+                    <p class="dlMeta">Einführung & erste Dokumente.</p>
+                </div>
+                <div class="dlCard__bottom">
+                    <a class="btn" href="downloads/EpsteinFiles-Presentation1.pdf" download>Download</a>
+                    <a class="btn btn--ghost" href="downloads/EpsteinFiles-Presentation1.pdf" target="_blank">Vorschau</a>
+                </div>
+            </article>
+
+            <!-- Epstein Presentation 2 -->
+            <article class="dlCard" data-type="pdf" data-title="Epstein Files Presentation 2">
+                <div class="dlCard__top">
+                    <div class="dlType">PDF</div>
+                    <h3 class="dlTitle">Epstein Files – Presentation 2</h3>
+                    <p class="dlMeta">Weitere Informationen & Analyse.</p>
+                </div>
+                <div class="dlCard__bottom">
+                    <a class="btn" href="downloads/EpsteinFiles-Presentation2.pdf" download>Download</a>
+                    <a class="btn btn--ghost" href="downloads/EpsteinFiles-Presentation2.pdf" target="_blank">Vorschau</a>
+                </div>
+            </article>
+
+            <!-- Musik ZIP -->
+            <article class="dlCard" data-type="file" data-title="Musik ZIP">
+                <div class="dlCard__top">
+                    <div class="dlType">ZIP</div>
+                    <h3 class="dlTitle">Musik Paket</h3>
+                    <p class="dlMeta">Tracks & Inhalte als ZIP Datei.</p>
+                </div>
+                <div class="dlCard__bottom">
+                    <a class="btn" href="downloads/musik.zip" download>Download</a>
+                    <a class="btn btn--ghost" href="downloads/musik.zip" target="_blank">Öffnen</a>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="hint" style="margin-top:16px;">
+            Lege deine Dateien in den Ordner <b>downloads/</b> (z.B. <i>presskit.pdf</i>) und ändere die Links oben.
+        </p>
+    </main>
+
+    <script src="nav.js"></script>
+    <script src="downloads.js"></script>
+</body>
+</html>
