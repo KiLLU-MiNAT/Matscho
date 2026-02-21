@@ -33,7 +33,7 @@ body {
 #particlesCanvas{
   position: fixed;
   inset: 0;
-  z-index: -1;          /* über Hintergrund */
+  z-index: 1;          /* über Hintergrund */
   pointer-events: none; /* nicht anklickbar */
   opacity: 0.55;        /* sichtbar aber soft */
 }
