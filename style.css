@@ -1060,3 +1060,9 @@ body.page {
 @media (max-width: 620px){
   .dlGrid{ grid-template-columns: 1fr; }
 }
+
+/* Bilder nicht auswählbar/ziehbar (erschwert nur) */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
