@@ -909,3 +909,13 @@ body.page {
         display: none;
     }
 }
+/* FIX: Mobile Menü immer über allem anzeigen */
+@media (max-width: 900px) {
+  .topbar {
+    z-index: 9999; /* Topbar über Content */
+  }
+
+  .nav__links {
+    z-index: 10000; /* Dropdown über Video/Track */
+  }
+}
