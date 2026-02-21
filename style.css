@@ -1066,3 +1066,13 @@ img {
   -webkit-user-drag: none;
   user-select: none;
 }
+
+/* ===== TOPBAR GLASS BACKGROUND (auch auf Startseite) ===== */
+.hero .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
