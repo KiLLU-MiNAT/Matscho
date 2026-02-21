@@ -26,3 +26,19 @@ body {
 @media (hover:none), (pointer:coarse){
   .cursor-glow { display:none; }
 }
+/* ===============================
+   BACKGROUND PARTICLES (Canvas)
+================================ */
+
+#particlesCanvas{
+  position: fixed;
+  inset: 0;
+  z-index: -3;          /* hinter allem */
+  pointer-events: none; /* nicht anklickbar */
+  opacity: 0.55;        /* sichtbar aber soft */
+}
+
+/* auf Mobile aus (Performance) */
+@media (hover:none), (pointer:coarse){
+  #particlesCanvas { display:none; }
+}
