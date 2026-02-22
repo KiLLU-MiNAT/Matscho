@@ -308,9 +308,12 @@ body {
 .leftpanel {
     position: relative;
     z-index: 5;
-    width: min(760px, 92vw);
-    margin: clamp(36px, 6vh, 90px) auto 0 auto; /* <-- zentriert */
-    text-align: center; /* Titel mittig */
+    /* LINKS ausrichten */
+    margin-left: clamp(40px, 6vw, 120px);
+    /* weiter oben wie früher */
+    margin-top: clamp(60px, 10vh, 140px);
+    /* BREITER machen */
+    width: min(980px, 92vw);
 }
 
 .leftpanel__title {
@@ -326,7 +329,7 @@ body {
 /* Track card */
 .track {
     margin: 0 auto; /* Video zentrieren */
-    width: min(640px, 92vw);
+    width: min(880px, 92vw);
     aspect-ratio: 16 / 9;
     border: 1px solid rgba(255,255,255,.10);
     border-radius: 10px;
@@ -390,9 +393,13 @@ body {
 
 /* Social list */
 .social {
-    margin: 26px auto 0 auto; /* zentriert */
-    width: min(420px, 92vw);
-    text-align: left; /* Links bleiben links */
+    margin-top: 26px;
+    /* NICHT mehr mittig */
+    margin-left: 0;
+    width: 100%; /* volle Breite vom leftpanel */
+    max-width: 880px; /* gleiche Breite wie Video */
+
+    text-align: left; /* Links ausrichten */
 }
 .social__divider {
     display: flex;
@@ -422,6 +429,7 @@ body {
     color: rgba(255,255,255,.75);
     padding: 7px 0;
     width: fit-content;
+    justify-content: flex-start; /* LINKS */
 }
 
     .social__link:hover {
