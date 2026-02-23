@@ -10,27 +10,27 @@
 
 <body class="page">
 
-  <!-- Topbar (gleiches Layout wie deine anderen Seiten) -->
-  <header class="pageTop">
-    <div class="topbar">
-      <div class="topbar__inner">
-        <nav class="nav">
-          <a class="brand" href="index.html">
-            <img src="assets/logo.png" alt="Matscho Logo" />
-          </a>
+    <!-- Topbar (gleiches Layout wie deine anderen Seiten) -->
+    <header class="pageTop">
+        <div class="topbar">
+            <div class="topbar__inner">
+                <nav class="nav">
+                    <a class="brand" href="index.html">
+                        <img src="assets/logo.png" alt="Matscho Logo" />
+                    </a>
 
-          <!-- Mobile Burger (falls du es nutzt) -->
-          <button class="burger" id="burgerBtn" aria-label="Menu">
-            <span></span><span></span><span></span>
-          </button>
+                    <!-- Mobile Burger (falls du es nutzt) -->
+                    <button class="burger" id="burgerBtn" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
 
-          <div class="nav__links" id="navMenu">
-            <a href="index.html" class="nav__link">START</a>
-            <a href="livestream.html" class="nav__link is-active">LIVESTREAM</a>
-            <a href="musik.html" class="nav__link">MUSIK</a>
-            <a href="downloads.html" class="nav__link">DOWNLOADS</a>
-            <a href="kontakt.html" class="nav__link">KONTAKT</a>
-          </div>
+                    <div class="nav__links" id="navMenu">
+                        <a href="index.html" class="nav__link">START</a>
+                        <a href="livestream.html" class="nav__link is-active">LIVESTREAM</a>
+                        <a href="musik.html" class="nav__link">MUSIK</a>
+                        <a href="downloads.html" class="nav__link">DOWNLOADS</a>
+                        <a href="kontakt.html" class="nav__link">KONTAKT</a>
+                    </div>
 
                     <div class="nav__icons" aria-label="Social Icons">
                         <a href="https://open.spotify.com/playlist/45a4oz9xmatk0sMNErxWjb?go=1&sp_cid=13e1fdfe9dd60b31591de1f9feed8ab9&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=ad26f029a9614f24" class="iconbtn" aria-label="Spotify">
@@ -55,100 +55,99 @@
                 </nav>
             </div>
         </div>
-  </header>
+    </header>
 
-  <main class="container">
-    <section class="pageHero">
-      <h1 class="pageTitle">LIVESTREAM</h1>
-      <p class="pageSub">Twitch Stream + Chat – direkt hier auf der Seite.</p>
-    </section>
+    <main class="container">
+        <section class="pageHero">
+            <h1 class="pageTitle">LIVESTREAM</h1>
+            <p class="pageSub">Twitch Stream + Chat – direkt hier auf der Seite.</p>
+        </section>
 
-    <section class="streamGrid">
+        <section class="streamGrid">
 
-      <!-- PLAYER -->
-      <div class="card card--player">
-        <div class="card__head">
-          <h2>LIVE</h2>
-          <div class="pill">
-            <span class="dot"></span>
-            <span id="liveBadge">Twitch: KiLLU_MiNAT</span>
-          </div>
-        </div>
+            <!-- PLAYER -->
+            <div class="card card--player">
+                <div class="card__head">
+                    <h2>LIVE</h2>
+                    <div class="pill">
+                        <span class="dot"></span>
+                        <span id="liveBadge">Twitch: KiLLU_MiNAT</span>
+                    </div>
+                </div>
 
-        <div class="embed16by9">
-          <!-- Twitch Player wird per JS gesetzt -->
-          <iframe
-            id="twitchPlayer"
-            src=""
-            allowfullscreen
-            scrolling="no"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            title="Twitch Stream Player"></iframe>
-        </div>
+                <div class="embed16by9">
+                    <!-- Twitch Player wird per JS gesetzt -->
+                    <iframe id="twitchPlayer"
+                            src=""
+                            allowfullscreen
+                            scrolling="no"
+                            frameborder="0"
+                            allow="autoplay; fullscreen"
+                            title="Twitch Stream Player"></iframe>
+                </div>
 
-        <div class="card__foot">
-          <a class="btn" id="openTwitch" href="https://www.twitch.tv/killu_minat" target="_blank" rel="noopener">Auf Twitch öffnen</a>
-          <a class="btn btn--ghost" id="openVods" href="https://www.twitch.tv/killu_minat/videos" target="_blank" rel="noopener">VODs</a>
-        </div>
-      </div>
+                <div class="card__foot">
+                    <a class="btn" id="openTwitch" href="https://www.twitch.tv/killu_minat" target="_blank" rel="noopener">Auf Twitch öffnen</a>
+                    <a class="btn btn--ghost" id="openVods" href="https://www.twitch.tv/killu_minat/videos" target="_blank" rel="noopener">VODs</a>
+                </div>
+            </div>
 
-      <!-- CHAT -->
-      <div class="card card--chat">
-        <div class="card__head">
-          <h2>CHAT</h2>
-          <div class="pill pill--muted">Desktop</div>
-        </div>
+            <!-- CHAT -->
+            <div class="card card--chat">
+                <div class="card__head">
+                    <h2>CHAT</h2>
+                    <div class="pill pill--muted">Desktop</div>
+                </div>
 
-        <div class="embedChat">
-          <iframe
-            id="twitchChat"
-            src=""
-            frameborder="0"
-            scrolling="no"
-            title="Twitch Chat"></iframe>
-        </div>
+                <div class="embedChat">
+                    <iframe id="twitchChat"
+                            src=""
+                            frameborder="0"
+                            scrolling="no"
+                            title="Twitch Chat"></iframe>
+                </div>
 
-        <div class="hint">
-          Bitte beachtet die <b>regeln</b> bleibt respektvoll.  
-          Wenn du etwas melden möchtest melde dich bei einem <b>Moderator.</b>.
-        </div>
-      </div>
+                <div class="hint">
+                    Bitte beachtet die <b>regeln</b> bleibt respektvoll.
+                    Wenn du etwas melden möchtest melde dich bei einem <b>Moderator.</b>.
+                </div>
+            </div>
 
-      <!-- INFO / PANELS -->
-      <div class="card">
-        <div class="card__head"><h2>STREAM-INFOS</h2></div>
-        <div class="kv">
-          <div class="kv__row"><span>Channel</span><b>KiLLU_MiNAT</b></div>
-          <div class="kv__row"><span>Link</span><b>twitch.tv/killu_minat</b></div>
-          <div class="kv__row"><span>Content</span><b>Gaming / Rap / Talk</b></div>
-          <div class="kv__row"><span>Sprache</span><b>Deutsch</b></div>
-        </div>
-      </div>
+            <!-- INFO / PANELS -->
+            <div class="card">
+                <div class="card__head"><h2>STREAM-INFOS</h2></div>
+                <div class="kv">
+                    <div class="kv__row"><span>Channel</span><b>KiLLU_MiNAT</b></div>
+                    <div class="kv__row"><span>Link</span><b>twitch.tv/killu_minat</b></div>
+                    <div class="kv__row"><span>Content</span><b>Gaming / Rap / Talk</b></div>
+                    <div class="kv__row"><span>Sprache</span><b>Deutsch</b></div>
+                </div>
+            </div>
 
-      <div class="card">
-        <div class="card__head"><h2>LETZTE VODS</h2></div>
-        <div class="miniCards">
-          <!-- Ohne Twitch API: simple Links -->
-          <a class="mini" href="https://www.twitch.tv/killu_minat/videos" target="_blank" rel="noopener">
-            <span class="mini__title">Alle Videos ansehen</span>
-            <span class="mini__meta">Twitch Videos</span>
-          </a>
-          <a class="mini" href="https://www.twitch.tv/killu_minat/clips" target="_blank" rel="noopener">
-            <span class="mini__title">Clips ansehen</span>
-            <span class="mini__meta">Twitch Clips</span>
-          </a>
-        </div>
-      </div>
+            <div class="card">
+                <div class="card__head"><h2>LETZTE VODS</h2></div>
+                <div class="miniCards">
+                    <!-- Ohne Twitch API: simple Links -->
+                    <a class="mini" href="https://www.twitch.tv/killu_minat/videos" target="_blank" rel="noopener">
+                        <span class="mini__title">Alle Videos ansehen</span>
+                        <span class="mini__meta">Twitch Videos</span>
+                    </a>
+                    <a class="mini" href="https://www.twitch.tv/killu_minat/clips" target="_blank" rel="noopener">
+                        <span class="mini__title">Clips ansehen</span>
+                        <span class="mini__meta">Twitch Clips</span>
+                    </a>
+                </div>
+            </div>
 
-    </section>
-  </main>
+        </section>
+    </main>
 
-  <!-- Burger script (falls vorhanden) -->
-  <script src="nav.js"></script>
-  <script src="livestream.js"></script>
-  <script src="protect.js"></script>
-  <script src="effects.js"></script>
+    <!-- Burger script (falls vorhanden) -->
+    <script src="nav.js"></script>
+    <script src="livestream.js"></script>
+    <script src="protect.js"></script>
+    <script src="effects.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
 

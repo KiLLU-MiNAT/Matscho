@@ -309,7 +309,7 @@ body {
     position: relative;
     z-index: 5;
     /* LINKS ausrichten */
-    margin-left: clamp(40px, 6vw, 120px);
+    margin-left: clamp(120px, 10vw, 240px);
     /* weiter oben wie früher */
     margin-top: clamp(60px, 10vh, 140px);
     /* BREITER machen */
@@ -326,10 +326,50 @@ body {
     text-shadow: 0 20px 60px rgba(0,0,0,.65);
 }
 
+/* ================================
+   MOBILE START LAYOUT (CENTER)
+================================ */
+@media (max-width: 900px) {
+
+    .leftpanel {
+        margin-left: auto; /* nicht mehr links */
+        margin-right: auto;
+        margin-top: 60px;
+        width: min(640px, 92vw);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* alles mittig */
+        text-align: center;
+    }
+
+    /* Titel mittig */
+    .leftpanel__title {
+        text-align: center;
+    }
+
+    /* Video mittig */
+    .track {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Liste unter Video mittig */
+    .social {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+
+    .social__link {
+        justify-content: center;
+    }
+}
+
 /* Track card */
 .track {
     margin: 0 auto; /* Video zentrieren */
-    width: min(880px, 92vw);
+    width: min(1000px, 92vw);
     aspect-ratio: 16 / 9;
     border: 1px solid rgba(255,255,255,.10);
     border-radius: 10px;
@@ -1101,4 +1141,143 @@ img {
     z-index: 5;
 }
 /* Content bleibt vorne */
+
+/* ================================
+   SMOOTH PAGE ENTRANCE
+================================ */
+
+/* Startzustand: alles "noch nicht geladen" */
+html:not(.is-loaded) .topbar,
+html:not(.is-loaded) .leftpanel,
+html:not(.is-loaded) .container,
+html:not(.is-loaded) .pageHero,
+html:not(.is-loaded) .contactGrid,
+html:not(.is-loaded) .streamGrid {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+/* Wenn geladen: smooth rein */
+html.is-loaded .topbar,
+html.is-loaded .leftpanel,
+html.is-loaded .container,
+html.is-loaded .pageHero,
+html.is-loaded .contactGrid,
+html.is-loaded .streamGrid {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+/* Stagger (nacheinander) auf Startseite */
+html.is-loaded .topbar {
+    transition-delay: .05s;
+}
+
+html.is-loaded .leftpanel {
+    transition-delay: .14s;
+}
+
+/* Optional: Track + Social ein bisschen nachgezogen */
+html.is-loaded .track {
+    transition: transform .7s ease, opacity .7s ease;
+    transition-delay: .22s;
+}
+
+html.is-loaded .social {
+    transition: transform .7s ease, opacity .7s ease;
+    transition-delay: .30s;
+}
+
+/* Falls Track/Social noch nicht animieren: Startzustände setzen */
+html:not(.is-loaded) .track,
+html:not(.is-loaded) .social {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html:not(.is-loaded) .topbar,
+    html:not(.is-loaded) .leftpanel,
+    html:not(.is-loaded) .container,
+    html:not(.is-loaded) .pageHero,
+    html:not(.is-loaded) .contactGrid,
+    html:not(.is-loaded) .streamGrid,
+    html:not(.is-loaded) .track,
+    html:not(.is-loaded) .social {
+        opacity: 1;
+        transform: none;
+    }
+
+    html.is-loaded * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+/* ================================
+   HERO PERSON ENTRANCE (Startseite)
+================================ */
+
+/* Person + Network starten unsichtbar */
+html:not(.is-loaded) .hero__layers {
+    opacity: 0;
+    transform: translateY(18px) scale(1.01);
+}
+
+/* Rein-Animation */
+html.is-loaded .hero__layers {
+    opacity: 1;
+    transform: translateY(0) scale(1.01);
+    transition: opacity .9s ease, transform .9s cubic-bezier(.2,.9,.2,1);
+    transition-delay: .18s;
+}
+
+/* Kurzer Glitch-Pop beim Eintritt (nur am Anfang) */
+html.is-loaded .glitch::before {
+    animation: glitchPopA .65s ease 1, glitchA 2.6s infinite linear .65s;
+}
+
+html.is-loaded .glitch::after {
+    animation: glitchPopB .65s ease 1, glitchB 3.1s infinite linear .65s;
+}
+
+@keyframes glitchPopA {
+    0% {
+        opacity: 0;
+        transform: translateX(-18px) scale(1.02);
+        clip-path: inset(0 0 75% 0);
+    }
+
+    40% {
+        opacity: .8;
+        transform: translateX(10px) scale(1.02);
+        clip-path: inset(25% 0 35% 0);
+    }
+
+    100% {
+        opacity: .55;
+        transform: translateX(-2px) scale(1);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes glitchPopB {
+    0% {
+        opacity: 0;
+        transform: translateX(18px) scale(1.02);
+        clip-path: inset(75% 0 0 0);
+    }
+
+    40% {
+        opacity: .85;
+        transform: translateX(-12px) scale(1.02);
+        clip-path: inset(35% 0 25% 0);
+    }
+
+    100% {
+        opacity: .55;
+        transform: translateX(2px) scale(1);
+        clip-path: inset(0 0 0 0);
+    }
 
