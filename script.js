@@ -1,6 +1,6 @@
 // ========= VIDEO MODAL =========
 // Option A: YouTube embed (ersetze VIDEO_ID unten)
-const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // <- HIER DEIN VIDEO EINTRAGEN
+const YOUTUBE_VIDEO_ID = "iIQjgtIxZXk"; // <- HIER DEIN VIDEO EINTRAGEN
 
 const openBtn = document.getElementById("openVideo");
 const modal = document.getElementById("videoModal");
@@ -32,4 +32,5 @@ modal?.addEventListener("click", (e) => {
 // ESC close
 window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+
 });
